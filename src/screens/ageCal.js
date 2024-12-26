@@ -2343,7 +2343,7 @@ import html2pdf from 'html2pdf.js';
 import embassylistpdftopimage from "../../src/image_placeholder/embassylistpdftopimage.jpeg"
 import Barcode from 'react-barcode';
 
-
+ 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
   { id: 'surname', label: 'Surname', minWidth: 100 },
