@@ -123,7 +123,7 @@ const Signup = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('https://skywayapi.ntechagent.com/api/auth/register', {
+      const response = await fetch('https://alwasitapisecond.ntechagent.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

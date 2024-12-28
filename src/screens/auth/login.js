@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('https://skywayapi.ntechagent.com/api/auth/login', {
+      const response = await fetch('https://alwasitapisecond.ntechagent.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

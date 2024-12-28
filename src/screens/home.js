@@ -442,7 +442,7 @@ useEffect(() => {
 
   const fetchCount = async () => {
     try {
-      const response = await fetch('https://skywayapi.ntechagent.com/api/count');
+      const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count');
       if (!response.ok) {
         throw new Error('Failed to fetch count');
       }
@@ -936,7 +936,7 @@ useEffect(() => {
       const [dataa, setDataa] = useState();
       const fetchDataa = async () => {
         try {
-          const response = await fetch('https://skywayapi.ntechagent.com/tt');
+          const response = await fetch('https://alwasitapisecond.ntechagent.com/tt');
           const result = await response.json();
           if (result.status === 'ok') {
             console.log(result.data); // Log the fetched data for debugging
@@ -1000,7 +1000,7 @@ useEffect(() => {
               const dummyData = { newValue: count + 1 }; // Ensure this is an integer
           
               try {
-                const response = await fetch('https://skywayapi.ntechagent.com/api/count', {
+                const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count', {
                   method: 'PUT', // Assuming you want to update the count
                   headers: {
                     'Content-Type': 'application/json',
@@ -1109,7 +1109,7 @@ formData.append("cvcount", formatCount(count + 1));
 
 try {
   const result = await axios.post(
-      "https://skywayapi.ntechagent.com/tupload-image",
+      "https://alwasitapisecond.ntechagent.com/tupload-image",
       formData,
       {
           headers: { "Content-Type": "multipart/form-data" },
@@ -1167,7 +1167,7 @@ try {
       const dummyData = { newValue: count + 1 }; // Ensure this is an integer
           
       try {
-        const response = await fetch('https://skywayapi.ntechagent.com/api/count', {
+        const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count', {
           method: 'PUT', // Assuming you want to update the count
           headers: {
             'Content-Type': 'application/json',
@@ -1287,7 +1287,7 @@ formData.append("cvcount", formatCount(count + 1));
 
 try {
   const result = await axios.post(
-      "https://skywayapi.ntechagent.com/tupload-image",
+      "https://alwasitapisecond.ntechagent.com/tupload-image",
       formData,
       {
           headers: { "Content-Type": "multipart/form-data" },
@@ -1570,7 +1570,7 @@ personalInfo.dateOfBirth = !personalInfo.dateOfBirth ? formattedDate : personalI
         };
 
         try {
-            const response = await fetch('https://skywayapi.ntechagent.com/cv-builder-1', {
+            const response = await fetch('https://alwasitapisecond.ntechagent.com/cv-builder-1', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1632,7 +1632,7 @@ personalInfo.dateOfBirth = !personalInfo.dateOfBirth ? formattedDate : personalI
       const dummyData = { newValue: count + 1 }; // Ensure this is an integer
           
       try {
-        const response = await fetch('https://skywayapi.ntechagent.com/api/count', {
+        const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count', {
           method: 'PUT', // Assuming you want to update the count
           headers: {
             'Content-Type': 'application/json',
@@ -1774,7 +1774,7 @@ personalInfo.dateOfBirth = !personalInfo.dateOfBirth ? formattedDate : personalI
        const dummyData = { newValue: count + 1 }; // Ensure this is an integer
           
        try {
-         const response = await fetch('https://skywayapi.ntechagent.com/api/count', {
+         const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count', {
            method: 'PUT', // Assuming you want to update the count
            headers: {
              'Content-Type': 'application/json',

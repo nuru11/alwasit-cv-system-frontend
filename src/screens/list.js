@@ -62,7 +62,7 @@
 //   React.useEffect(() => {
 //     const fetchData = async () => {
 //       try {
-//         const response = await fetch('https://skywayapi.ntechagent.com/tt');
+//         const response = await fetch('https://alwasitapisecond.ntechagent.com/tt');
 //         const result = await response.json();
 //         if (result.status === 'ok') {
 //           console.log(result.data); // Log the fetched data for debugging
@@ -94,7 +94,7 @@
 //     const confirmDelete = window.confirm('Are you sure you want to delete this item?');
 //     if (confirmDelete) {
 //       try {
-//         const response = await fetch(`https://skywayapi.ntechagent.com/tget-images/${id}`, {
+//         const response = await fetch(`https://alwasitapisecond.ntechagent.com/tget-images/${id}`, {
 //           method: 'DELETE',
 //         });
 //         const result = await response.json();
@@ -288,7 +288,7 @@
 
 
 //     try {
-//       const response = await fetch(`https://skywayapi.ntechagent.com/tget-images/${editData.id}`, {
+//       const response = await fetch(`https://alwasitapisecond.ntechagent.com/tget-images/${editData.id}`, {
 //         method: 'PUT',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -1110,7 +1110,7 @@ export default function StickyHeadTable() {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://skywayapi.ntechagent.com/tt');
+        const response = await fetch('https://alwasitapisecond.ntechagent.com/tt');
         const result = await response.json();
         if (result.status === 'ok') {
           console.log(result.data); // Log the fetched data for debugging
@@ -1142,7 +1142,7 @@ export default function StickyHeadTable() {
     const confirmDelete = window.confirm('Are you sure you want to delete this item?');
     if (confirmDelete) {
       try {
-        const response = await fetch(`https://skywayapi.ntechagent.com/tget-images/${id}`, {
+        const response = await fetch(`https://alwasitapisecond.ntechagent.com/tget-images/${id}`, {
           method: 'DELETE',
         });
         const result = await response.json();
@@ -1336,7 +1336,7 @@ export default function StickyHeadTable() {
 
 
     try {
-      const response = await fetch(`https://skywayapi.ntechagent.com/tget-images/${editData.id}`, {
+      const response = await fetch(`https://alwasitapisecond.ntechagent.com/tget-images/${editData.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

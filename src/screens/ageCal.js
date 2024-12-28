@@ -1856,47 +1856,47 @@
 /////////////////////////////////////////////////////////
 
 
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
-// const PostDummyData = () => {
-//   const [message, setMessage] = useState('');
-//   const [error, setError] = useState('');
+const PostDummyData = () => {
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
-//   const handlePostDummyData = async () => {
-//     const dummyData = { newValue: 6 }; // Ensure this is an integer
+  const handlePostDummyData = async () => {
+    const dummyData = { newValue: 6 }; // Ensure this is an integer
 
-//     try {
-//       const response = await fetch('https://skywayapi.ntechagent.com/api/count', {
-//         method: 'PUT', // Assuming you want to update the count
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(dummyData),
-//       });
+    try {
+      const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count', {
+        method: 'PUT', // Assuming you want to update the count
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dummyData),
+      });
 
-//       if (!response.ok) {
-//         throw new Error('Failed to post dummy data');
-//       }
+      if (!response.ok) {
+        throw new Error('Failed to post dummy data');
+      }
 
-//       const result = await response.text(); // Adjust if your API returns JSON
-//       setMessage(`Successfully posted: ${result}`);
-//     } catch (error) {
-//       console.error('Error:', error);
-//       setError('Failed to post dummy data. Please try again.');
-//     }
-//   };
+      const result = await response.text(); // Adjust if your API returns JSON
+      setMessage(`Successfully posted: ${result}`);
+    } catch (error) {
+      console.error('Error:', error);
+      setError('Failed to post dummy data. Please try again.');
+    }
+  };
 
-//   return (
-//     <div>
-//       <h2>Post Dummy Data</h2>
-//       <button onClick={handlePostDummyData}>Send Dummy Data</button>
-//       {message && <p style={{ color: 'green' }}>{message}</p>}
-//       {error && <p style={{ color: 'red' }}>{error}</p>}
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <h2>Post Dummy Data</h2>
+      <button onClick={handlePostDummyData}>Send Dummy Data</button>
+      {message && <p style={{ color: 'green' }}>{message}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+  );
+};
 
-// export default PostDummyData;
+export default PostDummyData;
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -1910,7 +1910,7 @@
 
 //   const fetchCount = async () => {
 //     try {
-//       const response = await fetch('https://skywayapi.ntechagent.com/api/count');
+//       const response = await fetch('https://alwasitapisecond.ntechagent.com/api/count');
 //       if (!response.ok) {
 //         throw new Error('Failed to fetch count');
 //       }
@@ -2320,505 +2320,505 @@
 
 
 
-import  React, {useRef} from 'react';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import Checkbox from '@mui/material/Checkbox'; // Import Checkbox
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete'; 
-import IconButton from '@mui/material/IconButton';
-import { useNavigate } from 'react-router-dom';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Header from "../screens/header";
+// import  React, {useRef} from 'react';
+// import Paper from '@mui/material/Paper';
+// import Table from '@mui/material/Table';
+// import TableBody from '@mui/material/TableBody';
+// import TableCell from '@mui/material/TableCell';
+// import TableContainer from '@mui/material/TableContainer';
+// import TableHead from '@mui/material/TableHead';
+// import TablePagination from '@mui/material/TablePagination';
+// import TableRow from '@mui/material/TableRow';
+// import Checkbox from '@mui/material/Checkbox'; // Import Checkbox
+// import EditIcon from '@mui/icons-material/Edit';
+// import DeleteIcon from '@mui/icons-material/Delete'; 
+// import IconButton from '@mui/material/IconButton';
+// import { useNavigate } from 'react-router-dom';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+// import Header from "../screens/header";
 
-import html2pdf from 'html2pdf.js';
-import embassylistpdftopimage from "../../src/image_placeholder/embassylistpdftopimage.jpeg"
-import Barcode from 'react-barcode';
+// import html2pdf from 'html2pdf.js';
+// import embassylistpdftopimage from "../../src/image_placeholder/embassylistpdftopimage.jpeg"
+// import Barcode from 'react-barcode';
 
  
-const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'surname', label: 'Surname', minWidth: 100 },
-  { id: 'currentNationality', label: 'Nationality', minWidth: 170 },
-  { id: 'postappliedfor', label: 'Position', minWidth: 170 },
-  { id: 'createdAt', label: 'Created At', minWidth: 170 },
-  { id: 'actions', label: 'Actions', minWidth: 100 },
-];
+// const columns = [
+//   { id: 'name', label: 'Name', minWidth: 170 },
+//   { id: 'surname', label: 'Surname', minWidth: 100 },
+//   { id: 'currentNationality', label: 'Nationality', minWidth: 170 },
+//   { id: 'postappliedfor', label: 'Position', minWidth: 170 },
+//   { id: 'createdAt', label: 'Created At', minWidth: 170 },
+//   { id: 'actions', label: 'Actions', minWidth: 100 },
+// ];
 
-export default function StickyHeadTable() {
-  const [selected, setSelected] = React.useState([]); // State for selected rows
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const [rows, setRows] = React.useState([]);
-  const navigate = useNavigate();
-  const [isAnyChecked, setIsAnyChecked] = React.useState(false);
+// export default function StickyHeadTable() {
+//   const [selected, setSelected] = React.useState([]); // State for selected rows
+//   const [page, setPage] = React.useState(0);
+//   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+//   const [rows, setRows] = React.useState([]);
+//   const navigate = useNavigate();
+//   const [isAnyChecked, setIsAnyChecked] = React.useState(false);
 
-  const selectedRows = rows.filter(row => selected.includes(row.id));
+//   const selectedRows = rows.filter(row => selected.includes(row.id));
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://skywayapi.ntechagent.com/tt');
-        const result = await response.json();
-        if (result.status === 'ok') {
-          const sortedData = result.data
-            .filter(item => item.createdAt)
-            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-          setRows(sortedData);
-        }
-      } catch (error) {
-        console.error('Fetch error:', error);
-      }
-    };
+//   React.useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await fetch('https://alwasitapisecond.ntechagent.com/tt');
+//         const result = await response.json();
+//         if (result.status === 'ok') {
+//           const sortedData = result.data
+//             .filter(item => item.createdAt)
+//             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+//           setRows(sortedData);
+//         }
+//       } catch (error) {
+//         console.error('Fetch error:', error);
+//       }
+//     };
 
-    fetchData();
-  }, []);
-
-  const handleSelectAllClick = (event) => {
-
-
-    if (event.target.checked) {
-        const newSelecteds = rows.map((row) => row.id);
-        setSelected(newSelecteds);
-        setIsAnyChecked(true); // Set to true if any checkbox is checked
-        return;
-      }
-      setSelected([]);
-      setIsAnyChecked(false); // 
-
-
-    // if (event.target.checked) {
-    //   const newSelecteds = rows.map((row) => row.id);
-    //   setSelected(newSelecteds);
-    //   return;
-    // }
-    // setSelected([]);
-  };
+//     fetchData();
+//   }, []);
 
 //   const handleSelectAllClick = (event) => {
+
+
 //     if (event.target.checked) {
-//       const newSelecteds = rows.map((row) => row.id);
-//       setSelected(newSelecteds);
-//       setIsAnyChecked(true); // Set to true if any checkbox is checked
-//       return;
+//         const newSelecteds = rows.map((row) => row.id);
+//         setSelected(newSelecteds);
+//         setIsAnyChecked(true); // Set to true if any checkbox is checked
+//         return;
+//       }
+//       setSelected([]);
+//       setIsAnyChecked(false); // 
+
+
+//     // if (event.target.checked) {
+//     //   const newSelecteds = rows.map((row) => row.id);
+//     //   setSelected(newSelecteds);
+//     //   return;
+//     // }
+//     // setSelected([]);
+//   };
+
+// //   const handleSelectAllClick = (event) => {
+// //     if (event.target.checked) {
+// //       const newSelecteds = rows.map((row) => row.id);
+// //       setSelected(newSelecteds);
+// //       setIsAnyChecked(true); // Set to true if any checkbox is checked
+// //       return;
+// //     }
+// //     setSelected([]);
+// //     setIsAnyChecked(false); // Set to false if all checkboxes are unchecked
+// //   };
+  
+//   const handleClick = (id) => {
+//     const selectedIndex = selected.indexOf(id);
+//     let newSelected = [];
+  
+//     if (selectedIndex === -1) {
+//       newSelected = newSelected.concat(selected, id);
+//     } else if (selectedIndex === 0) {
+//       newSelected = newSelected.concat(selected.slice(1));
+//     } else if (selectedIndex === selected.length - 1) {
+//       newSelected = newSelected.concat(selected.slice(0, -1));
+//     } else if (selectedIndex > 0) {
+//       newSelected = newSelected.concat(
+//         selected.slice(0, selectedIndex),
+//         selected.slice(selectedIndex + 1),
+//       );
 //     }
-//     setSelected([]);
-//     setIsAnyChecked(false); // Set to false if all checkboxes are unchecked
-//   };
   
-  const handleClick = (id) => {
-    const selectedIndex = selected.indexOf(id);
-    let newSelected = [];
-  
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, id);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
-      );
-    }
-  
-    setSelected(newSelected);
-    setIsAnyChecked(newSelected.length > 0); // Update visibility based on selected count
-  };
-
-
-//   const handleDownload = () => {
-//     // Implement download logic here
-//     console.log('Download button clicked. Selected IDs:', selected);
-//     // For example: trigger a download of selected items
+//     setSelected(newSelected);
+//     setIsAnyChecked(newSelected.length > 0); // Update visibility based on selected count
 //   };
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+// //   const handleDownload = () => {
+// //     // Implement download logic here
+// //     console.log('Download button clicked. Selected IDs:', selected);
+// //     // For example: trigger a download of selected items
+// //   };
+
+//   const handleChangePage = (event, newPage) => {
+//     setPage(newPage);
+//   };
+
+//   const handleChangeRowsPerPage = (event) => {
+//     setRowsPerPage(+event.target.value);
+//     setPage(0);
+//   };
 
   
 
-const pdfRef = useRef();
+// const pdfRef = useRef();
 
-  const downloadCV = () => {
-    const element = pdfRef.current;
+//   const downloadCV = () => {
+//     const element = pdfRef.current;
   
-    // Configuration for html2pdf
-    const isMobile = window.innerWidth <= 768; // Adjust based on your breakpoints
-    const config = {
-      filename: 'Embassy_list.pdf',
-      margin: [1, 0.2, 0, 0.2],
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: isMobile ? 1 : 2, logging: true, dpi: 300, letterRendering: true },
-      jsPDF: { unit: 'mm', format: isMobile ? 'A4' : 'letter', orientation: 'Portrait' }
-    };
+//     // Configuration for html2pdf
+//     const isMobile = window.innerWidth <= 768; // Adjust based on your breakpoints
+//     const config = {
+//       filename: 'Embassy_list.pdf',
+//       margin: [1, 0.2, 0, 0.2],
+//       image: { type: 'jpeg', quality: 0.98 },
+//       html2canvas: { scale: isMobile ? 1 : 2, logging: true, dpi: 300, letterRendering: true },
+//       jsPDF: { unit: 'mm', format: isMobile ? 'A4' : 'letter', orientation: 'Portrait' }
+//     };
   
-    html2pdf()
-      .from(element)
-      .set(config)
-      .toPdf()
-      .get('pdf') 
-      .then(pdf => {
-        const totalPages = pdf.internal.getNumberOfPages();
-        const phoneNumber = `${dayName}, ${monthName} ${dayNumber}, ${year}`; // Replace with your phone number
-        const email = "www.ntechagent.com | +251 911 454176 | ntechagent@gmail.com"; // Replace with your email
+//     html2pdf()
+//       .from(element)
+//       .set(config)
+//       .toPdf()
+//       .get('pdf') 
+//       .then(pdf => {
+//         const totalPages = pdf.internal.getNumberOfPages();
+//         const phoneNumber = `${dayName}, ${monthName} ${dayNumber}, ${year}`; // Replace with your phone number
+//         const email = "www.ntechagent.com | +251 911 454176 | ntechagent@gmail.com"; // Replace with your email
   
-        for (let i = 1; i <= totalPages; i++) {
-          pdf.setPage(i);
-          pdf.setFontSize(10);
-          pdf.setTextColor(5);
+//         for (let i = 1; i <= totalPages; i++) {
+//           pdf.setPage(i);
+//           pdf.setFontSize(10);
+//           pdf.setTextColor(5);
   
-          // Set positions
-          const pageYPosition = pdf.internal.pageSize.getHeight() - 10; // Y position for footer
-          const leftXPosition = 3; // X position for left side text
-          const rightXPosition = pdf.internal.pageSize.getWidth() - 22; // Base position for page number
-          const centerXPosition = pdf.internal.pageSize.getWidth() / 2 + 10; // Center position
+//           // Set positions
+//           const pageYPosition = pdf.internal.pageSize.getHeight() - 10; // Y position for footer
+//           const leftXPosition = 3; // X position for left side text
+//           const rightXPosition = pdf.internal.pageSize.getWidth() - 22; // Base position for page number
+//           const centerXPosition = pdf.internal.pageSize.getWidth() / 2 + 10; // Center position
   
-          // Add phone number on the left
-          pdf.text(`${phoneNumber}`, leftXPosition, pageYPosition);
+//           // Add phone number on the left
+//           pdf.text(`${phoneNumber}`, leftXPosition, pageYPosition);
   
-          // Add email in the center
-          pdf.text(` ${email}`, centerXPosition, pageYPosition, { align: 'center' });
+//           // Add email in the center
+//           pdf.text(` ${email}`, centerXPosition, pageYPosition, { align: 'center' });
   
-          // Add page number and total pages to the footer on the right
-          pdf.text(`Page ${i} of ${totalPages}`, rightXPosition, pageYPosition);
-          // pdf.text(`${email}`, rightXPosition, pageYPosition);
-        }
-      })
-      .save();
-  };
+//           // Add page number and total pages to the footer on the right
+//           pdf.text(`Page ${i} of ${totalPages}`, rightXPosition, pageYPosition);
+//           // pdf.text(`${email}`, rightXPosition, pageYPosition);
+//         }
+//       })
+//       .save();
+//   };
   
 
 
 
 
-  const today = new Date();
-  // Format the date as MM/DD/YYYY
-  const formattedTodayDate = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+//   const today = new Date();
+//   // Format the date as MM/DD/YYYY
+//   const formattedTodayDate = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
 
 
 
 
-   // Get today's date
-  //  const today = new Date();
+//    // Get today's date
+//   //  const today = new Date();
 
-   // Define arrays for day and month names
-   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//    // Define arrays for day and month names
+//    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
  
-   // Get the required date parts
-   const dayName = dayNames[today.getDay()];
-   const monthName = monthNames[today.getMonth()];
-   const dayNumber = today.getDate();
-   const year = today.getFullYear();
+//    // Get the required date parts
+//    const dayName = dayNames[today.getDay()];
+//    const monthName = monthNames[today.getMonth()];
+//    const dayNumber = today.getDate();
+//    const year = today.getFullYear();
 
-   const handleRowClick = (id) => {
-    navigate(`/list/${id}`);
-  }; 
+//    const handleRowClick = (id) => {
+//     navigate(`/list/${id}`);
+//   }; 
 
   
   
-  return (
-    <>
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <Header />
-        <TableContainer sx={{ maxHeight: 440 }}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                <TableCell padding="checkbox">
-                  <Checkbox
-                    color="primary"
-                    indeterminate={selected.length > 0 && selected.length < rows.length}
-                    checked={rows.length > 0 && selected.length === rows.length}
-                    onChange={handleSelectAllClick}
-                  />
-                </TableCell>
-                {columns.map((column) => (
-                  <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
-                    {column.label}
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-  {rows
-    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-    .map((row) => {
-      const isSelected = selected.indexOf(row.id) !== -1;
-      return (
-        <TableRow
-          hover
-          role="checkbox"
-          tabIndex={-1}
-          key={row.id}
-          onClick={(event) => { 
-            // event.stopPropagation(); // Prevent row click from toggling checkbox
-            handleRowClick(row.name + "-" + row.middleName + "-" + row.surname + "_" + row.createdAt);
-          }}
-          selected={isSelected}
-        >
-          <TableCell padding="checkbox">
-            <Checkbox
-              color="primary"
-              checked={isSelected}
-              onChange={(event) => {
-                event.stopPropagation(); // Prevent checkbox click from triggering row click
-                handleClick(row.id);
-              }}
+//   return (
+//     <>
+//       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+//         <Header />
+//         <TableContainer sx={{ maxHeight: 440 }}>
+//           <Table stickyHeader aria-label="sticky table">
+//             <TableHead>
+//               <TableRow>
+//                 <TableCell padding="checkbox">
+//                   <Checkbox
+//                     color="primary"
+//                     indeterminate={selected.length > 0 && selected.length < rows.length}
+//                     checked={rows.length > 0 && selected.length === rows.length}
+//                     onChange={handleSelectAllClick}
+//                   />
+//                 </TableCell>
+//                 {columns.map((column) => (
+//                   <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+//                     {column.label}
+//                   </TableCell>
+//                 ))}
+//               </TableRow>
+//             </TableHead>
+//             <TableBody>
+//   {rows
+//     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+//     .map((row) => {
+//       const isSelected = selected.indexOf(row.id) !== -1;
+//       return (
+//         <TableRow
+//           hover
+//           role="checkbox"
+//           tabIndex={-1}
+//           key={row.id}
+//           onClick={(event) => { 
+//             // event.stopPropagation(); // Prevent row click from toggling checkbox
+//             handleRowClick(row.name + "-" + row.middleName + "-" + row.surname + "_" + row.createdAt);
+//           }}
+//           selected={isSelected}
+//         >
+//           <TableCell padding="checkbox">
+//             <Checkbox
+//               color="primary"
+//               checked={isSelected}
+//               onChange={(event) => {
+//                 event.stopPropagation(); // Prevent checkbox click from triggering row click
+//                 handleClick(row.id);
+//               }}
 
-              onClick={(event) => { event.stopPropagation(); /* Edit functionality */ }}
-            />
-          </TableCell>
-          {columns.map((column) => {
-            const value = row[column.id];
-            return (
-              <TableCell key={column.id} align={column.align}>
-                {column.id === 'actions' ? (
-                  <>
-                    <IconButton onClick={(event) => { event.stopPropagation(); /* Edit functionality */ }}>
-                      <EditIcon />
-                    </IconButton>
-                    <IconButton color="error" onClick={(event) => { event.stopPropagation(); /* Delete functionality */ }}>
-                      <DeleteIcon />
-                    </IconButton>
-                    <IconButton onClick={(event) => { event.stopPropagation(); /* Menu functionality */ }}>
-                      <MoreVertIcon />
-                    </IconButton>
-                  </>
-                ) : (
-                  value
-                )}
-              </TableCell>
-            );
-          })}
-        </TableRow>
-      );
-    })}
-</TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </Paper>
+//               onClick={(event) => { event.stopPropagation(); /* Edit functionality */ }}
+//             />
+//           </TableCell>
+//           {columns.map((column) => {
+//             const value = row[column.id];
+//             return (
+//               <TableCell key={column.id} align={column.align}>
+//                 {column.id === 'actions' ? (
+//                   <>
+//                     <IconButton onClick={(event) => { event.stopPropagation(); /* Edit functionality */ }}>
+//                       <EditIcon />
+//                     </IconButton>
+//                     <IconButton color="error" onClick={(event) => { event.stopPropagation(); /* Delete functionality */ }}>
+//                       <DeleteIcon />
+//                     </IconButton>
+//                     <IconButton onClick={(event) => { event.stopPropagation(); /* Menu functionality */ }}>
+//                       <MoreVertIcon />
+//                     </IconButton>
+//                   </>
+//                 ) : (
+//                   value
+//                 )}
+//               </TableCell>
+//             );
+//           })}
+//         </TableRow>
+//       );
+//     })}
+// </TableBody>
+//           </Table>
+//         </TableContainer>
+//         <TablePagination
+//           rowsPerPageOptions={[10, 25, 100]}
+//           component="div"
+//           count={rows.length}
+//           rowsPerPage={rowsPerPage}
+//           page={page}
+//           onPageChange={handleChangePage}
+//           onRowsPerPageChange={handleChangeRowsPerPage}
+//         />
+//       </Paper>
 
-      <TablePagination
-  rowsPerPageOptions={[10, 25, 100]}
-  component="div"
-  count={rows.length}
-  rowsPerPage={rowsPerPage}
-  page={page}
-  onPageChange={handleChangePage}
-  onRowsPerPageChange={handleChangeRowsPerPage}
-/>
+//       <TablePagination
+//   rowsPerPageOptions={[10, 25, 100]}
+//   component="div"
+//   count={rows.length}
+//   rowsPerPage={rowsPerPage}
+//   page={page}
+//   onPageChange={handleChangePage}
+//   onRowsPerPageChange={handleChangeRowsPerPage}
+// />
 
-{/* New Table for Selected Applicants */}
-<Paper sx={{ marginTop: 2 }}>
-  <TableContainer>
-    <Table aria-label="selected applicants table">
-      <TableHead>
-        <TableRow>
-          <TableCell>Name</TableCell>
-          <TableCell>Surname</TableCell>
-          <TableCell>Nationality</TableCell>
-          <TableCell>Position</TableCell>
-          <TableCell>Created At</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {selectedRows.map((row, index) => (
-          <TableRow key={row.id}>
-            <TableCell>{index + 1}</TableCell>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.surname}</TableCell>
-            <TableCell>{row.currentNationality}</TableCell>
-            <TableCell>{row.postappliedfor}</TableCell>
-            <TableCell>{new Date(row.createdAt).toLocaleDateString()}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </TableContainer>
-</Paper>
+// {/* New Table for Selected Applicants */}
+// <Paper sx={{ marginTop: 2 }}>
+//   <TableContainer>
+//     <Table aria-label="selected applicants table">
+//       <TableHead>
+//         <TableRow>
+//           <TableCell>Name</TableCell>
+//           <TableCell>Surname</TableCell>
+//           <TableCell>Nationality</TableCell>
+//           <TableCell>Position</TableCell>
+//           <TableCell>Created At</TableCell>
+//         </TableRow>
+//       </TableHead>
+//       <TableBody>
+//         {selectedRows.map((row, index) => (
+//           <TableRow key={row.id}>
+//             <TableCell>{index + 1}</TableCell>
+//             <TableCell>{row.name}</TableCell>
+//             <TableCell>{row.surname}</TableCell>
+//             <TableCell>{row.currentNationality}</TableCell>
+//             <TableCell>{row.postappliedfor}</TableCell>
+//             <TableCell>{new Date(row.createdAt).toLocaleDateString()}</TableCell>
+//           </TableRow>
+//         ))}
+//       </TableBody>
+//     </Table>
+//   </TableContainer>
+// </Paper>
 
-{isAnyChecked && (
-  <button onClick={downloadCV} style={{ marginTop: '20px' }}>
-    Download
-  </button>
-)}
-
-
-<div style={{display: "none"}}>
-<div id="embassy_list" ref={pdfRef}>
-  <div style={{ background: "", marginTop: "20px", display: "flex", justifyContent: "center" }}>
-    <img
-      src={embassylistpdftopimage}
-      alt="header"
-      style={{ maxWidth: '98%',  }} // Ensures the image is contained
-    />
-  </div>
-
-  <div style={{ background: "", display: "flex", justifyContent: "center" }}>
-    {/* <table style={{ 
-      maxWidth: '97%', 
-      minWidth: '97%', 
-      background: '', 
-      borderCollapse: 'collapse',  // Ensures borders are collapsed
-      marginTop: "10px"
-    }}>
-      <thead>
-        <tr>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>SNo</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Applicant Name</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Passport #</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Sponsor ID</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Visa No.</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Application No</th>
-          <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Bar Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        {selectedRows.map((row, index) => (
-          <tr key={row.id}>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{index + 1}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.name}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.passportnum}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.sponsorId}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.visaNo}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.applicationNo}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>hhhhhhhhhhhh</td>
-          </tr>
-        ))}
-      </tbody>
-    </table> */}
+// {isAnyChecked && (
+//   <button onClick={downloadCV} style={{ marginTop: '20px' }}>
+//     Download
+//   </button>
+// )}
 
 
+// <div style={{display: "none"}}>
+// <div id="embassy_list" ref={pdfRef}>
+//   <div style={{ background: "", marginTop: "20px", display: "flex", justifyContent: "center" }}>
+//     <img
+//       src={embassylistpdftopimage}
+//       alt="header"
+//       style={{ maxWidth: '98%',  }} // Ensures the image is contained
+//     />
+//   </div>
+
+//   <div style={{ background: "", display: "flex", justifyContent: "center" }}>
+//     {/* <table style={{ 
+//       maxWidth: '97%', 
+//       minWidth: '97%', 
+//       background: '', 
+//       borderCollapse: 'collapse',  // Ensures borders are collapsed
+//       marginTop: "10px"
+//     }}>
+//       <thead>
+//         <tr>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>SNo</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Applicant Name</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Passport #</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Sponsor ID</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Visa No.</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Application No</th>
+//           <th style={{ border: '1px solid black', padding: '8px', textAlign: 'left', fontSize: "12px" }}>Bar Code</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {selectedRows.map((row, index) => (
+//           <tr key={row.id}>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{index + 1}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.name}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.passportnum}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.sponsorId}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.visaNo}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{row.applicationNo}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>hhhhhhhhhhhh</td>
+//           </tr>
+//         ))}
+//       </tbody>
+//     </table> */}
 
 
-    <table style={{ maxWidth: '97%', 
-      minWidth: '97%',  borderCollapse: 'collapse', marginTop: "20px" }}>
-    <thead>
-        <tr>
-            <th style={{ border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>SNo</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}> </span>
-                </div>
-            </th>
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Applicant Name</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>الاسم الأوسط</span>
-                </div>
-            </th>
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Passport #</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>اسم العائلة</span>
-                </div>
-            </th>
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Sponsor ID</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>اللقب</span>
-                </div>
-            </th>
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Visa No.</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
-                </div>
-            </th>
 
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Application No</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
-                </div>
-            </th>
 
-            <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', color: 'black' }}>Bar Code</span>
-                    <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
-                </div>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        {/* <tr>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
-        </tr> */}
+//     <table style={{ maxWidth: '97%', 
+//       minWidth: '97%',  borderCollapse: 'collapse', marginTop: "20px" }}>
+//     <thead>
+//         <tr>
+//             <th style={{ border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>SNo</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}> </span>
+//                 </div>
+//             </th>
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Applicant Name</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>الاسم الأوسط</span>
+//                 </div>
+//             </th>
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Passport #</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>اسم العائلة</span>
+//                 </div>
+//             </th>
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Sponsor ID</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>اللقب</span>
+//                 </div>
+//             </th>
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Visa No.</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
+//                 </div>
+//             </th>
 
-        {selectedRows.map((row, index) => ( 
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Application No</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
+//                 </div>
+//             </th>
+
+//             <th style={{ backgroundColor: '', border: '1px solid black', padding: '4px', color: 'white', textAlign: 'left' }}>
+//                 <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
+//                     <span style={{ fontSize: '10px', color: 'black' }}>Bar Code</span>
+//                     <span style={{ fontSize: '10px', color: 'black', display: "none" }}>رمز السيرة الذاتية</span>
+//                 </div>
+//             </th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         {/* <tr>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>CV{}</td>
+//         </tr> */}
+
+//         {selectedRows.map((row, index) => ( 
             
-            <tr >
+//             <tr >
 
-{/* <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{index + 1}</td> */}
-            {/* <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.name}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.passportnum}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.sponsorId}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.visaNo}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.applicationNo}</td>
-            <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>hhhhhhhhhhhh</td> */}
+// {/* <td style={{ border: '1px solid black', padding: '8px', fontSize: "12" }}>{index + 1}</td> */}
+//             {/* <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.name}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.passportnum}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.sponsorId}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.visaNo}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>{row.applicationNo}</td>
+//             <td style={{ border: '1px solid black', padding: '8px', fontSize: "12px" }}>hhhhhhhhhhhh</td> */}
 
 
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{index + 1}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.name} {row.middleName} {row.surname}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.passportnum}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.sponsorId}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.visaNo}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.applicationNo}</td>
-            <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>
-    <Barcode
-        displayValue={false}
-        value={row.applicationNo && row.applicationNo.length === 10 ? row.applicationNo : "E333777777"}
-        height={23}
-        width={1.7}
-        marginBottom={1}
-    />
-</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{index + 1}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.name} {row.middleName} {row.surname}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.passportnum}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.sponsorId}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.visaNo}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>{row.applicationNo}</td>
+//             <td style={{ border: '1px solid black', padding: '4px', textAlign: 'center', fontSize: '10px' }}>
+//     <Barcode
+//         displayValue={false}
+//         value={row.applicationNo && row.applicationNo.length === 10 ? row.applicationNo : "E333777777"}
+//         height={23}
+//         width={1.7}
+//         marginBottom={1}
+//     />
+// </td>
 
-            </tr>
+//             </tr>
             
-            ))}
+//             ))}
        
-    </tbody>
-</table>
+//     </tbody>
+// </table>
 
 
 
-  </div>
-</div>
-</div>
-    </>
-  ); 
-}
+//   </div>
+// </div>
+// </div>
+//     </>
+//   ); 
+// }
